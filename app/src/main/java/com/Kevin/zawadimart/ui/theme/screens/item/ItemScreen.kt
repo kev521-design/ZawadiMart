@@ -1,5 +1,6 @@
 package com.Kevin.zawadimart.ui.theme.screens.item
 
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -9,8 +10,11 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Search
@@ -40,19 +44,25 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.net.toUri
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.Kevin.zawadimart.R
+import com.Kevin.zawadimart.navigation.ROUT_INTENT
 import com.Kevin.zawadimart.ui.theme.neworange
 import com.Kevin.zawadimart.ui.theme.newpink
 import com.Kevin.zawadimart.ui.theme.newwhite
+import java.nio.file.WatchEvent
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ItemScreen(){
+fun ItemScreen(navController: NavController){
 
     Column (
         modifier = Modifier.fillMaxSize()
     ){
+
         //TopAppBar
         TopAppBar(
             title = { Text(text = "Products") },
@@ -73,6 +83,11 @@ fun ItemScreen(){
                 }
                 IconButton(onClick = {}) {
                     Icon(imageVector = Icons.Default.Notifications, contentDescription = "")
+                }
+                IconButton(onClick = {
+                    navController.navigate(ROUT_INTENT)
+                }) {
+                    Icon(imageVector = Icons.Default.ArrowForward, contentDescription = "")
                 }
             }
         )
@@ -100,6 +115,8 @@ fun ItemScreen(){
         //End of Searchbar
 
         Spacer(modifier = Modifier.height(40.dp))
+
+        Column (modifier = Modifier.verticalScroll(rememberScrollState())) {
 
         //Row
         Row (
@@ -389,6 +406,229 @@ fun ItemScreen(){
         }
         //End of row
 
+            Spacer(modifier = Modifier.width(40.dp))
+
+        //Row
+        Row (
+            modifier = Modifier.padding(start = 20.dp)
+        )
+        {
+
+
+            Image(
+                painter = painterResource(R.drawable.pink),
+                contentDescription = "blouse",
+                modifier = Modifier.width(200.dp).height(150.dp).clip(shape = RoundedCornerShape(10.dp)),
+                contentScale = ContentScale.FillWidth
+            )
+
+            Spacer(modifier = Modifier.width(40.dp))
+
+
+            Column {
+                Text(
+                    text = "Ladies outfits",
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.ExtraBold,
+                )
+                Text(
+                    text = "Ksh 6000",
+                    fontSize = 15.sp,
+                    textDecoration = TextDecoration.LineThrough,
+                )
+                Text(
+                    text = "Price : 6000",
+                    fontSize = 15.sp,
+
+                    )
+                Row {
+                    Icon(
+                        imageVector = Icons.Default.Star, contentDescription = "",
+                        tint = newpink
+                    )
+
+                    Icon(
+                        imageVector = Icons.Default.Star, contentDescription = "",
+                        tint = newpink
+                    )
+                    Icon(
+                        imageVector = Icons.Default.Star, contentDescription = "",
+                        tint = newpink
+                    )
+                    Icon(
+                        imageVector = Icons.Default.Star, contentDescription = "",
+                        tint = newpink
+                    )
+                    Icon(
+                        imageVector = Icons.Default.Star, contentDescription = "",
+                        tint = newpink
+                    )
+                }
+
+
+                Button(
+                    onClick = {},
+                    colors = ButtonDefaults.buttonColors(neworange),
+                    shape = RoundedCornerShape(10.dp),
+
+                    ) {
+                    Text(text = "Contact us")
+                }
+            }
+        }
+        //End of row
+
+
+            Spacer(modifier = Modifier.width(40.dp))
+
+        //Row
+        Row (
+            modifier = Modifier.padding(start = 20.dp)
+        )
+        {
+
+
+            Image(
+                painter = painterResource(R.drawable.pink),
+                contentDescription = "blouse",
+                modifier = Modifier.width(200.dp).height(150.dp).clip(shape = RoundedCornerShape(10.dp)),
+                contentScale = ContentScale.FillWidth
+            )
+
+            Spacer(modifier = Modifier.width(40.dp))
+
+
+            Column {
+                Text(
+                    text = "Ladies outfits",
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.ExtraBold,
+                )
+                Text(
+                    text = "Ksh 6000",
+                    fontSize = 15.sp,
+                    textDecoration = TextDecoration.LineThrough,
+                )
+                Text(
+                    text = "Price : 6000",
+                    fontSize = 15.sp,
+
+                    )
+                Row {
+                    Icon(
+                        imageVector = Icons.Default.Star, contentDescription = "",
+                        tint = newpink
+                    )
+
+                    Icon(
+                        imageVector = Icons.Default.Star, contentDescription = "",
+                        tint = newpink
+                    )
+                    Icon(
+                        imageVector = Icons.Default.Star, contentDescription = "",
+                        tint = newpink
+                    )
+                    Icon(
+                        imageVector = Icons.Default.Star, contentDescription = "",
+                        tint = newpink
+                    )
+                    Icon(
+                        imageVector = Icons.Default.Star, contentDescription = "",
+                        tint = newpink
+                    )
+                }
+
+
+                Button(
+                    onClick = {
+
+                    },
+                    colors = ButtonDefaults.buttonColors(neworange),
+                    shape = RoundedCornerShape(10.dp),
+
+                    ) {
+                    Text(text = "Contact us")
+                }
+            }
+        }
+        //End of row
+
+            Spacer(modifier = Modifier.width(40.dp))
+
+        //Row
+        Row (
+            modifier = Modifier.padding(start = 20.dp)
+        )
+        {
+
+
+            Image(
+                painter = painterResource(R.drawable.pink),
+                contentDescription = "blouse",
+                modifier = Modifier.width(200.dp).height(150.dp).clip(shape = RoundedCornerShape(10.dp)),
+                contentScale = ContentScale.FillWidth
+            )
+
+            Spacer(modifier = Modifier.width(40.dp))
+
+
+            Column {
+                Text(
+                    text = "Ladies outfits",
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.ExtraBold,
+                )
+                Text(
+                    text = "Ksh 6000",
+                    fontSize = 15.sp,
+                    textDecoration = TextDecoration.LineThrough,
+                )
+                Text(
+                    text = "Price : 6000",
+                    fontSize = 15.sp,
+
+                    )
+                Row {
+                    Icon(
+                        imageVector = Icons.Default.Star, contentDescription = "",
+                        tint = newpink
+                    )
+
+                    Icon(
+                        imageVector = Icons.Default.Star, contentDescription = "",
+                        tint = newpink
+                    )
+                    Icon(
+                        imageVector = Icons.Default.Star, contentDescription = "",
+                        tint = newpink
+                    )
+                    Icon(
+                        imageVector = Icons.Default.Star, contentDescription = "",
+                        tint = newpink
+                    )
+                    Icon(
+                        imageVector = Icons.Default.Star, contentDescription = "",
+                        tint = newpink
+                    )
+                }
+
+
+                Button(
+                    onClick = {},
+                    colors = ButtonDefaults.buttonColors(neworange),
+                    shape = RoundedCornerShape(10.dp),
+
+                    ) {
+                    Text(text = "Contact us")
+                }
+            }
+            }
+        }
+        //End of row
+
+
+
+
 
 
     }
@@ -407,7 +647,7 @@ fun ItemScreen(){
 @Preview(showBackground = true)
 @Composable
 fun ItemScreenPreview(){
-    ItemScreen()
+    ItemScreen(rememberNavController())
 
 
 }

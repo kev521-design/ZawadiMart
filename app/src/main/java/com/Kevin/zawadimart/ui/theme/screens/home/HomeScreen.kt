@@ -19,12 +19,15 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.Kevin.zawadimart.ui.theme.screens.home.HomeScreen
 import com.Kevin.zawadimart.R
+import com.Kevin.zawadimart.navigation.ROUT_START
 
 
 @Composable
-fun HomeScreen(){
+fun HomeScreen(navController: NavController){
 
     Column (
 modifier = Modifier.fillMaxSize()
@@ -53,7 +56,9 @@ modifier = Modifier.fillMaxSize()
         )
 
         Button(
-            onClick = {},
+            onClick = {
+                navController.navigate(ROUT_START)
+            },
             colors = ButtonDefaults.buttonColors(Color.Magenta),
             shape = RoundedCornerShape(10.dp)
         ) {
@@ -69,5 +74,5 @@ modifier = Modifier.fillMaxSize()
 @Composable
 fun HomeScreenPreview(){
 
-    HomeScreen()
+    HomeScreen(rememberNavController())
 }
