@@ -1,6 +1,9 @@
-package com.Kevin.zawadimart.ui.theme.screens.service
+package com.Kevin.zawadimart.ui.theme.screens.personal
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -8,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -23,6 +27,7 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -39,6 +44,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.paint
@@ -55,13 +61,15 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.Kevin.zawadimart.R
 import com.Kevin.zawadimart.navigation.ROUT_HOME
+import com.Kevin.zawadimart.ui.theme.newblue
+import com.Kevin.zawadimart.ui.theme.newgreen
 import com.Kevin.zawadimart.ui.theme.neworange
 import com.Kevin.zawadimart.ui.theme.newpink
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ServiceScreen(navController: NavHostController) {
+fun PersonalScreen(navController: NavHostController) {
 
 
 
@@ -73,19 +81,6 @@ fun ServiceScreen(navController: NavHostController) {
     Scaffold(
         //TopBar
         topBar = {
-            TopAppBar(
-                title = { Text("Contact") },
-                navigationIcon = {
-                    IconButton(onClick = { /* Handle back/nav */ }) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
-                    }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = newpink,
-                    titleContentColor = Color.Black,
-                    navigationIconContentColor = Color.White
-                )
-            )
         },//end TopApp bar
 
         //BottomBar
@@ -151,128 +146,151 @@ fun ServiceScreen(navController: NavHostController) {
                 modifier = Modifier
                     .padding(paddingValues)
                     .fillMaxSize()
-                    .paint(painter = painterResource(R.drawable.img_3), contentScale = ContentScale.FillBounds)
                     .verticalScroll(rememberScrollState())
             ) {
 
 
                 //Main Contents of the page
 
-                Spacer(modifier = Modifier.height(20.dp))
-
-                //Searchbar
-
-                var search by remember { mutableStateOf("")}
-                OutlinedTextField(
-                    value = search,
-                    onValueChange = { search = it },
-                    modifier = Modifier.fillMaxWidth().padding(start =20.dp, end = 20.dp ),
-                    leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = "")},
-                    placeholder = { Text(text = "Search...")}
-                )
-                //End of Searchbar
+                Spacer(modifier = Modifier.height(40.dp))
 
 
-                Spacer(modifier = Modifier.height(20.dp))
+     Text(
+         text = "Hey Sammantha",
+         fontSize = 20.sp,
+         fontWeight = FontWeight.ExtraBold,
+         modifier = Modifier
+             .fillMaxWidth()
+             .padding(start = 30.dp)
+     )
 
-                Image(
-                    painter = painterResource(R.drawable.pink1),
-                    contentDescription = "blouse",
-                    modifier = Modifier.width(200.dp).height(150.dp).clip(shape = RoundedCornerShape(10.dp)),
-                    contentScale = ContentScale.FillWidth,
-
-                )
-                Spacer(modifier = Modifier.height(20.dp))
+                Spacer(modifier = Modifier.height(25.dp))
 
                 Text(
-                    text = "Services available",
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.ExtraBold,
-                    modifier = Modifier.fillMaxWidth(),
-                    textAlign = TextAlign.Center,
-
-
+                    text = "Here are your projects",
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 30.dp)
                 )
 
-                Spacer(modifier = Modifier.height(20.dp))
-
-                //Row
-                Row (
-                    modifier = Modifier.padding(start = 20.dp)
-                )
-                {
+                Spacer(modifier = Modifier.height(25.dp))
 
 
-                    Image(
-                        painter = painterResource(R.drawable.pink),
-                        contentDescription = "blouse",
-                        modifier = Modifier.width(200.dp).height(150.dp).clip(shape = RoundedCornerShape(10.dp)),
-                        contentScale = ContentScale.FillWidth
-                    )
+            //ROW
+             Row (
+                 modifier = Modifier
+                     .padding(start = 20.dp)
+                     .horizontalScroll(rememberScrollState())
 
-                    Spacer(modifier = Modifier.width(40.dp))
-
-
-                    Column {
-                        Text(
-                            text = "Ladies outfits",
-                            fontSize = 20.sp,
-                            fontWeight = FontWeight.ExtraBold,
-                        )
-                        Text(
-                            text = "Ksh 6000",
-                            fontSize = 15.sp,
-                            textDecoration = TextDecoration.LineThrough,
-                        )
-                        Text(
-                            text = "Price : 6000",
-                            fontSize = 15.sp,
-
-                            )
-                        Row {
-                            Icon(
-                                imageVector = Icons.Default.Star, contentDescription = "",
-                                tint = newpink
-                            )
-
-                            Icon(
-                                imageVector = Icons.Default.Star, contentDescription = "",
-                                tint = newpink
-                            )
-                            Icon(
-                                imageVector = Icons.Default.Star, contentDescription = "",
-                                tint = newpink
-                            )
-                            Icon(
-                                imageVector = Icons.Default.Star, contentDescription = "",
-                                tint = newpink
-                            )
-                            Icon(
-                                imageVector = Icons.Default.Star, contentDescription = "",
-                                tint = newpink
-                            )
-                        }
+             ){
 
 
-                        Button(
-                            onClick = {},
-                            colors = ButtonDefaults.buttonColors(neworange),
-                            shape = RoundedCornerShape(10.dp),
+                 //Card1
+                 Card (
+                     modifier = Modifier.width(150.dp).height(180.dp)
+                 ){
 
-                            ) {
-                            Text(text = "Contact us")
-                        }
-                    }
-                }
-                //End of row
+                     Column (
+                         modifier = Modifier
+                             .fillMaxSize()
+                             .background(newblue),
+                         horizontalAlignment = Alignment.CenterHorizontally,
+                         verticalArrangement = Arrangement.Center,
+
+                     ){
+                         Image(
+                             painter = painterResource(R.drawable.contact),
+                             contentDescription = "blouse",
+                             modifier = Modifier.size(50.dp),
+                         )
+
+                         Spacer(modifier = Modifier.height(25.dp))
+
+                         Text(
+                             text = "Crypto Currency Landing Page",
+                             fontSize = 15.sp,
+                         )
+
+
+                     }
+
+                 }
+                 //end of card1
+
+                 Spacer(modifier = Modifier.width(25.dp))
+
+                 //Card2
+                 Card (
+                     modifier = Modifier.width(150.dp).height(180.dp)
+                 ){
+
+                     Column (
+                         modifier = Modifier
+                             .fillMaxSize()
+                             .background(neworange),
+                         horizontalAlignment = Alignment.CenterHorizontally,
+                         verticalArrangement = Arrangement.Center,
+
+                         ){
+                         Image(
+                             painter = painterResource(R.drawable.contact),
+                             contentDescription = "blouse",
+                             modifier = Modifier.size(50.dp),
+                         )
+
+                         Spacer(modifier = Modifier.height(25.dp))
+
+                         Text(
+                             text = "Crypto Currency Landing Page",
+                             fontSize = 15.sp,
+                         )
+
+
+                     }
+
+                 }
+                 //end of card2
+
+
+                 Spacer(modifier = Modifier.width(25.dp))
+
+                 //Card3
+                 Card (
+                     modifier = Modifier.width(150.dp).height(180.dp)
+                 ){
+
+                     Column (
+                         modifier = Modifier
+                             .fillMaxSize()
+                             .background(newgreen),
+                         horizontalAlignment = Alignment.CenterHorizontally,
+                         verticalArrangement = Arrangement.Center,
+
+                         ){
+                         Image(
+                             painter = painterResource(R.drawable.contact),
+                             contentDescription = "blouse",
+                             modifier = Modifier.size(50.dp),
+                         )
+
+                         Spacer(modifier = Modifier.height(25.dp))
+
+                         Text(
+                             text = "Crypto Currency Landing Page",
+                             fontSize = 15.sp,
+                         )
+
+
+                     }
+
+                 }
+                 //end of card3
 
 
 
 
 
-
-
-
+             }//end row
 
 
 
@@ -282,9 +300,14 @@ fun ServiceScreen(navController: NavHostController) {
 
 
         }
+
     )
 
     //End of scaffold
+
+
+
+
 
 
 
@@ -301,10 +324,10 @@ fun ServiceScreen(navController: NavHostController) {
 
 @Preview(showBackground = true)
 @Composable
-fun ServiceScreenPreview(){
+fun PersonalScreenPreview(){
 
 
-    ServiceScreen(rememberNavController())
+    PersonalScreen(rememberNavController())
 
 
 }

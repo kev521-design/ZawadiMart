@@ -14,19 +14,21 @@ import com.Kevin.zawadimart.navigation.ROUT_HOME
 import com.Kevin.zawadimart.navigation.ROUT_INTENT
 import com.Kevin.zawadimart.navigation.ROUT_ITEM
 import com.Kevin.zawadimart.navigation.ROUT_SERVICE
+import com.Kevin.zawadimart.navigation.ROUT_SPLASH
 import com.Kevin.zawadimart.navigation.ROUT_START
 import com.Kevin.zawadimart.ui.theme.screens.about.AboutScreen
 import com.Kevin.zawadimart.ui.theme.screens.dashboard.DashboardScreen
 import com.Kevin.zawadimart.ui.theme.screens.home.HomeScreen
 import com.Kevin.zawadimart.ui.theme.screens.intent.IntentScreen
 import com.Kevin.zawadimart.ui.theme.screens.item.ItemScreen
+import com.Kevin.zawadimart.ui.theme.screens.splash.SplashScreen
 import com.Kevin.zawadimart.ui.theme.screens.start.StartScreen
 
 @Composable
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = ROUT_DASHBOARD
+    startDestination: String = ROUT_SPLASH
 ) {
 
     NavHost(
@@ -54,6 +56,9 @@ fun AppNavHost(
         }
         composable(ROUT_SERVICE){
             DashboardScreen(navController)
+        }
+        composable(ROUT_SPLASH){
+            SplashScreen(navController)
         }
 
     }

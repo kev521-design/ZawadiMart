@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.Kevin.zawadimart.R
+import com.Kevin.zawadimart.navigation.ROUT_DASHBOARD
 import com.Kevin.zawadimart.navigation.ROUT_ITEM
 import com.Kevin.zawadimart.ui.theme.neworange
 
@@ -78,7 +79,7 @@ Column (
 
     Button(
         onClick = {
-            navController.navigate(ROUT_ITEM)
+            navController.navigate(ROUT_DASHBOARD)
         },
         colors = ButtonDefaults.buttonColors(neworange),
         shape = RoundedCornerShape(10.dp),
