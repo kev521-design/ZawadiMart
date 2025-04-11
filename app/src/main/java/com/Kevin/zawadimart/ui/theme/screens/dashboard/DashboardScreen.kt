@@ -93,6 +93,7 @@ fun DashboardScreen(navController: NavHostController) {
                 Column(modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center) {
+
                     Text(text = "Welcome to ZawadiMall",
                         fontSize = 30.sp,
                         color = newpink,

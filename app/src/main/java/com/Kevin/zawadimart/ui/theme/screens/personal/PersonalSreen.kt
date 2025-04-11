@@ -22,12 +22,14 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -63,8 +65,10 @@ import com.Kevin.zawadimart.R
 import com.Kevin.zawadimart.navigation.ROUT_HOME
 import com.Kevin.zawadimart.ui.theme.newblue
 import com.Kevin.zawadimart.ui.theme.newgreen
+import com.Kevin.zawadimart.ui.theme.newgrey
 import com.Kevin.zawadimart.ui.theme.neworange
 import com.Kevin.zawadimart.ui.theme.newpink
+import com.Kevin.zawadimart.ui.theme.newwhite
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -86,7 +90,7 @@ fun PersonalScreen(navController: NavHostController) {
         //BottomBar
         bottomBar = {
             NavigationBar(
-                containerColor = newpink,
+                containerColor = newwhite,
             ){
                 NavigationBarItem(
                     icon = { Icon(Icons.Default.Home, contentDescription = "Home") },
@@ -194,8 +198,10 @@ fun PersonalScreen(navController: NavHostController) {
                          modifier = Modifier
                              .fillMaxSize()
                              .background(newblue),
+
                          horizontalAlignment = Alignment.CenterHorizontally,
                          verticalArrangement = Arrangement.Center,
+
 
                      ){
                          Image(
@@ -287,10 +293,84 @@ fun PersonalScreen(navController: NavHostController) {
                  //end of card3
 
 
-
-
-
              }//end row
+
+
+                Spacer(modifier = Modifier.height(150.dp))
+
+
+
+                //Card
+                Card(
+                    modifier = Modifier.fillMaxWidth().height(300.dp),
+                    colors = CardDefaults.cardColors(newgrey),
+
+
+
+                    ) {
+
+
+                       Card(
+                           modifier = Modifier
+                               .fillMaxWidth()
+                               .padding(start = 30.dp, end = 30.dp, top = 30.dp)
+                               .height(70.dp)
+
+                       ) {
+
+
+                            Row (
+                                modifier = Modifier
+                                    .background(newwhite)
+                            ){
+
+                                Image(
+                                    painter = painterResource(R.drawable.video),
+                                    contentDescription = "blouse",
+                                    modifier = Modifier.size(100.dp),
+                                )
+
+
+                                   Column(
+
+                                   ) {
+                                       Text(
+                                           text = "NDA review for website project",
+                                           fontSize = 15.sp,
+                                           modifier = Modifier
+                                               .fillMaxWidth()
+                                               .padding(start = 15.dp, top = 20.dp)
+
+                                       )
+
+
+                                       Text(
+                                           text = "Tonight ",
+                                           fontSize = 15.sp,
+                                           modifier = Modifier
+                                               .fillMaxWidth()
+                                               .padding(start = 20.dp)
+
+                                       )
+
+
+
+
+                                   }
+
+
+                            }
+
+
+
+                       }
+
+
+                        }
+
+
+                }//End of Card
+
 
 
 
@@ -299,7 +379,7 @@ fun PersonalScreen(navController: NavHostController) {
 
 
 
-        }
+
 
     )
 
@@ -317,7 +397,6 @@ fun PersonalScreen(navController: NavHostController) {
 
 
 }
-
 
 
 

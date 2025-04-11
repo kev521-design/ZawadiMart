@@ -10,6 +10,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.Kevin.zawadimart.navigation.ROUT_ABOUT
 import com.Kevin.zawadimart.navigation.ROUT_DASHBOARD
+import com.Kevin.zawadimart.navigation.ROUT_FORM
 import com.Kevin.zawadimart.navigation.ROUT_HOME
 import com.Kevin.zawadimart.navigation.ROUT_INTENT
 import com.Kevin.zawadimart.navigation.ROUT_ITEM
@@ -28,7 +29,7 @@ import com.Kevin.zawadimart.ui.theme.screens.start.StartScreen
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = ROUT_SPLASH
+    startDestination: String = ROUT_FORM
 ) {
 
     NavHost(
@@ -58,6 +59,9 @@ fun AppNavHost(
             DashboardScreen(navController)
         }
         composable(ROUT_SPLASH){
+            SplashScreen(navController)
+        }
+        composable(ROUT_FORM){
             SplashScreen(navController)
         }
 
