@@ -11,3 +11,8 @@ const val ROUT_DASHBOARD = "dashboard"
 const val ROUT_SERVICE = "service"
 const val ROUT_SPLASH = "spalsh"
 const val ROUT_FORM = "form"
+const val ROUT_FORM1 = "form1"
+
+//authentication
+const val ROUTE_REGISTER = "Register"
+const val ROUTE_LOGIN = "Login"

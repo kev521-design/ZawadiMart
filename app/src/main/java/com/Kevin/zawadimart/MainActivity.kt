@@ -1,19 +1,11 @@
 package com.Kevin.zawadimart
 
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.Kevin.navigation.AppNavHost
-import com.Kevin.zawadimart.ui.theme.ZawadiMartTheme
+import com.Kevin.zawadimart.navigation.AppNavHost
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,27 +17,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-
-fun Demo(){
-    Column (
-        modifier = Modifier.fillMaxSize()
-    ){
-        Text(text ="Buy smart")
-        Text(text = "Welcome to my app" )
-
-    }
-}
 
 
 
-
-
-
-
-
-@Preview(showBackground = true)
-@Composable
-fun DemoPreview() {
-    Demo()
-}

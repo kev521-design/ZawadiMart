@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.Kevin.zawadimart.R
+import com.Kevin.zawadimart.navigation.ROUTE_LOGIN
 import com.Kevin.zawadimart.navigation.ROUT_START
 import com.Kevin.zawadimart.ui.theme.newpink
 import kotlinx.coroutines.delay
@@ -33,7 +34,7 @@ fun SplashScreen(navController: NavHostController) {
 val coroutine = rememberCoroutineScope()
     coroutine.launch {
         delay(2000)
-        navController.navigate(ROUT_START)
+        navController.navigate(ROUTE_LOGIN)
     }
     //end of Navigation
 
@@ -62,17 +63,7 @@ val coroutine = rememberCoroutineScope()
 
 
 
-
-
-
-
-
-
-
 }
-
-
-
 
 
 @Preview(showBackground = true)

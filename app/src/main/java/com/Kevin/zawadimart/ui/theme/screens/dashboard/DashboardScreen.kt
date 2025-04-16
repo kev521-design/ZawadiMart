@@ -41,6 +41,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.Kevin.zawadimart.R
 import com.Kevin.zawadimart.navigation.ROUT_ABOUT
+import com.Kevin.zawadimart.navigation.ROUT_FORM1
 import com.Kevin.zawadimart.navigation.ROUT_HOME
 import com.Kevin.zawadimart.navigation.ROUT_ITEM
 import com.Kevin.zawadimart.ui.theme.newpink
@@ -185,7 +186,10 @@ fun DashboardScreen(navController: NavHostController) {
 
             //Card1
             Card (
-                modifier = Modifier.width(150.dp).height(180.dp)
+                modifier = Modifier
+                    .width(150.dp)
+                    .height(180.dp)
+                    .clickable{navController.navigate(ROUT_FORM1)}
             ){
 
                 Column (

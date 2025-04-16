@@ -12,11 +12,11 @@ val Pink40 = Color(0xFF7D5260)
 val neworange = Color(0xFFFF5722)
 val newwhite = Color(0xFFFFFFFF)
 val  newpink= Color(0xFFD91155)
-val  newblue= Color(0xFF1D44C2)
+val  newblue= Color(0xFF020D3B)
 val  newgreen= Color(0xFF009688)
 val  newgrey= Color(0xFFAAADAD)
 val  darkpink= Color(0xFF54031F)
 val  darkblue=Color(0xFF083F3F)
-val  newblack=Color(0xFF02024B)
+val  newblack=Color(0xFF02022D)
 
 
